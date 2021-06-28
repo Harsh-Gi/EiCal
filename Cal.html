@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Cal</title>
+    <style>
+     *{
+       margin:0px;
+       padding:0px;
+       box-sizing:border-box;
+       }
+      #body{
+          height:100%;
+          width:100%;
+          text-align:center;
+          background: linear-gradient(#8e9eab, #bbd2c5);
+          background-size:100% 100%;
+          background-repeat:no-repeat;
+          color:black;
+          font-size:17px;
+          background-attachment:fixed;
+         }
+       .top{
+       height:40px;
+       display:flex;
+       justify-content:center;
+       align-items:center;
+       margin:10px 12px;
+       border-top:0.5px solid black;
+       border-bottom:0.5px solid black;
+       }
+       .topout{
+       position:sticky;
+       top:0px;
+       border:0.1px solid transparent;
+       background: linear-gradient(#8e9eab, #bbd2c5);
+       background-size:100% 100%;
+       background-repeat:no-repeat;
+       background-attachment:fixed;
+       z-index:10;
+       width:100%;
+       outline:none;
+       box-shadow:2px 2px 10px black;
+       transition:0.1s;
+       }
+       .topout:active
+       {
+        opacity:0.7;
+        box-shadow:none;
+       }
+       .slogan{
+       color:black;
+       font-size:10px;
+       border:0.5px solid black;
+       height:30px;
+       border-right:none;
+       border-left:none;
+       display:flex;
+       align-items:center;
+       }
+       .symbol{
+       height:30px;
+       width:30px;
+       border-top:0.5px solid black;
+       border-bottom:0.5px solid black;
+       }
+       .name{
+       font-size:25px;
+       height:30px;
+       border-top:0.5px solid black;
+       border-bottom:0.5px solid black;
+       color:black;
+       }
+       .heading1{
+       display:inline-block;
+       padding:5px 0px;
+       margin:15px 0px;
+       font-size:15px;
+       border-bottom:0.2px solid black;
+       }
+       .display
+       {
+        height:50px;
+        width:300px;
+        margin:0px 0px;
+        background:none;
+        border:0.5px solid black;
+        outline:none;
+        color: black;
+        font-size:22px;
+        text-align:center;
+        padding:10px;
+       }
+       .display1
+       {
+        border-radius:20px 20px 0px 0px;
+        border-bottom:none;
+       }
+       .display2
+       {
+        border-radius:0px 0px 20px 20px;
+        border-top:none;
+       }
+       .display3
+       {
+        display:none;
+       }
+       .type{
+       margin:0px auto;
+       text-align:center;
+       padding:10px 0px;
+       }
+       .btn{
+       width:65px;
+       height:40px;
+       margin:5px;
+       text-align:center;
+       font-size:20px;
+       color:black;
+       background:none;
+       border:0.2px solid black;
+       border-radius:20px;
+       outline:none;
+       transition:0.1s;
+       box-shadow:0.2px 0.2px 7px black;
+       }
+       .btn:active{
+       box-shadow:none;
+       opacity:0.6;
+       }
+       .enter{
+       width:60%;
+       height:35px;
+       background:none;
+       outline:none;
+       border:0.2px solid black;
+       color:black;
+       font-size:20px;
+       border-radius:20px;
+       margin:5px 0px;
+       transition:0.1s;
+       box-shadow:1px 1px 10px black;
+       }
+       .enter:active{
+       opacity:0.6;
+       box-shadow:none;
+       }
+       .form1
+       {
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        flex-direction:column;
+       }
+       .note
+       {
+        margin:20px;
+        font-size:10px;
+       }
+       #dot
+       {
+        font-size:30px;
+       }
+   </style>
+  </head>
+  <body id="body">
+   <button class="topout" id="topout" onclick="home()">
+   <nav class="top" id="top">
+   <img src="cal.jpg" class="symbol" id="symbol">
+   <tt class="name" id="name">EiCal</tt>
+   <p class="slogan" id="slogan"> The time for Mathematics </p>
+   </nav>
+   </button>
+   <h2 class="heading"><tt class="heading1" id="heading">The Calculator</tt></h2>
+   <p class="note" id="note">
+   <tt>Note: Please don't put the '0' before any value</tt>
+   </p>
+   <form name="form1" class="form1">
+   <input class="display display1" id="display1" name="display1">
+   <input class="display display2" id="display2" name="display2">
+   <input class="display3" id="display3" name="display3">
+   </form>
+   <div class="keypad1" id="keypad1">
+   <form>
+   <table class="type">
+   <tr>
+   <td><input class="btn" type="button" value="1" onclick="insert(1,1)"></td>
+   <td><input class="btn" type="button" value="2" onclick="insert(2,2)"></td>
+   <td><input class="btn" type="button" value="3" onclick="insert(3,3)"></td>
+   <td><input class="btn" type="button" value="&plus;" onclick="insert('+','&plus;')"></td>
+   </tr>
+   <tr>
+   <td><input class="btn" type="button" value="4" onclick="insert(4,4)"></td>
+   <td><input class="btn" type="button" value="5" onclick="insert(5,5)"></td>
+   <td><input class="btn" type="button" value="6" onclick="insert(6,6)"></td>
+   <td><input class="btn" type="button" value="&minus;" onclick="insert('-','&minus;')"></td>
+   </tr>
+   <tr>
+   <td><input class="btn" type="button" value="7" onclick="insert(7,7)"></td>
+   <td><input class="btn" type="button" value="8" onclick="insert(8,8)"></td>
+   <td><input class="btn" type="button" value="9" onclick="insert(9,9)"></td>
+   <td><input class="btn" type="button" value="&times;" onclick="insert('*','&times;')"></td>
+   </tr>
+   <tr>
+   <td><input class="btn" type="button" value="DEL" onclick="del()"></td>
+   <td><input class="btn" type="button" value="0" onclick="insert(0,0)"></td>
+   <td><input class="btn" type="button" value="AC" onclick="clean()"></td>
+   <td><input class="btn" type="button" value="&divide;" onclick="insert('/','&divide;')"></td>
+   </tr>
+   <tr>
+   <td><input class="btn" type="button" value="(" onclick="insert('(','(')"></td>
+   <td><input class="btn" type="button" value=")" onclick="insert(')',')')"></td>
+   <td><input class="btn" type="button" value="&pi;" onclick="insert('Pi','&pi;')"></td>
+   <td><input class="btn" id="dot" type="button" value="." onclick="insert('.','.');"></td>
+   </tr>
+   <tr>
+   <td colspan="4"><input class="enter" id="enter" type="button" value="&equals;" onclick="equal()"></td>
+   </tr>
+   </table>
+   </form>
+   </div>
+   <script>
+    window.onload=clearLoad();
+    function clearLoad()
+    {
+     document.form1.display1.value='';
+     document.form1.display2.value='';
+     document.form1.display3.value='';
+    }
+    function insert(num,symbol)
+    {
+     if(num=='Pi')
+     {
+      document.form1.display1.value=document.form1.display1.value+Math.PI;
+      document.form1.display3.value=document.form1.display3.value+Math.PI;
+     }
+     else
+     {
+      document.form1.display1.value=document.form1.display1.value+symbol;
+      document.form1.display3.value=document.form1.display3.value+num;
+     }
+    }
+    function del()
+    {
+     var newvar=document.form1.display1.value;
+     document.form1.display1.value=newvar.substring(0,(newvar.length)-1);
+     var newvar3=document.form1.display3.value;
+     document.form1.display3.value=newvar3.substring(0,(newvar3.length)-1);
+    }
+    function clean()
+    {
+     document.form1.display1.value="";
+     document.form1.display2.value="";
+     document.form1.display3.value="";
+    }
+    function equal()
+    {
+     document.form1.display2.value=eval(document.form1.display3.value);
+    }
+    function home()
+    {
+     window.open("index.html","_top");
+    }
+    var modeValCal=sessionStorage.getItem("modeValCal1");
+    if(modeValCal=="2")
+    {
+    var body=document.getElementById('body');
+    body.style.background='linear-gradient(#0f2027, #172d35, #1f3b47)';
+    body.style.backgroundRepeat='no-repeat';
+    body.style.backgroundSize='100% 100%';
+    body.style.backgroundAttachment='fixed';
+    var topout=document.getElementById('topout');
+    topout.style.background='linear-gradient(#0f2027, #172d35, #1f3b47)';
+    topout.style.backgroundRepeat='no-repeat';
+    topout.style.backgroundSize='100% 100%';
+    topout.style.backgroundAttachment='fixed';
+    var btn=document.getElementsByClassName('btn');
+    var button123=0;
+    for(button123=0;button123<20;button123++)
+    {
+     btn[button123].style.color='white';
+     btn[button123].style.border='0.1px solid white';
+    }
+    var top1=document.getElementById('top');
+    top1.style.borderTop='0.5px solid white';
+    top1.style.borderBottom='0.5px solid white';
+    var symbol=document.getElementById('symbol');
+    symbol.style.borderTop='0.5px solid white';
+    symbol.style.borderBottom='0.5px solid white';
+    var name1=document.getElementById('name');
+    name1.style.borderTop='0.5px solid white';
+    name1.style.borderBottom='0.5px solid white';
+    name1.style.color='white';
+    var slogan=document.getElementById('slogan');
+    slogan.style.borderTop='0.5px solid white';
+    slogan.style.borderBottom='0.5px solid white';
+    slogan.style.color='white';
+    var enter=document.getElementById('enter');
+    enter.style.color='white';
+    enter.style.border='0.2px solid white';
+    var display1=document.getElementById('display1');
+    display1.style.color='white';
+    display1.style.border='0.5px solid white';
+    display1.style.borderBottom='none';
+    var display2=document.getElementById('display2');
+    display2.style.color='white';
+    display2.style.border='0.5px solid white';
+    display2.style.borderTop='none';
+    var note=document.getElementById('note');
+    note.style.color='white';
+    var heading=document.getElementById('heading');
+    heading.style.color='white';
+    heading.style.borderBottom='0.2px solid white';
+    sessionStorage.setItem("modeVal3","2");
+    }
+    else if(modeValCal=="1")
+    {
+    var body=document.getElementById('body');
+    body.style.background='linear-gradient(#8e9eab, #bbd2c5)';
+    document.body.style.backgroundRepeat='no-repeat';
+    document.body.style.backgroundSize='100% 100%';
+    document.body.style.backgroundAttachment='fixed';
+    var topout=document.getElementById('topout');
+    topout.style.background='linear-gradient(#8e9eab, #bbd2c5)';
+    topout.style.backgroundRepeat='no-repeat';
+    topout.style.backgroundSize='100% 100%';
+    topout.style.backgroundAttachment='fixed';
+    var btn=document.getElementsByClassName('btn');
+    var button123=0;
+    for(button123=0;button123<20;button123++)
+    {
+     btn[button123].style.color='black';
+     btn[button123].style.border='0.1px solid black';
+    }
+    var top1=document.getElementById('top');
+    top1.style.borderTop='0.5px solid black';
+    top1.style.borderBottom='0.5px solid black';
+    var symbol=document.getElementById('symbol');
+    symbol.style.borderTop='0.5px solid black';
+    symbol.style.borderBottom='0.5px solid black';
+    var name1=document.getElementById('name');
+    name1.style.borderTop='0.5px solid black';
+    name1.style.borderBottom='0.5px solid black';
+    name1.style.color='black';
+    var slogan=document.getElementById('slogan');
+    slogan.style.borderTop='0.5px solid black';
+    slogan.style.borderBottom='0.5px solid black';
+    slogan.style.color='black';
+    var enter=document.getElementById('enter');
+    enter.style.color='black';
+    enter.style.border='0.2px solid black';
+    var display1=document.getElementById('display1');
+    display1.style.color='black';
+    display1.style.border='0.5px solid black';
+    display1.style.borderBottom='none';
+    var display2=document.getElementById('display2');
+    display2.style.color='black';
+    display2.style.border='0.5px solid black';
+    display2.style.borderTop='none';
+    var note=document.getElementById('note');
+    note.style.color='black';
+    var heading=document.getElementById('heading');
+    heading.style.color='black';
+    heading.style.borderBottom='0.2px solid black';
+    sessionStorage.setItem("modeVal3","1");
+    }
+    </script>
+  </body>
+ </html>

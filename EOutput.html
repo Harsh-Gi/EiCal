@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>EOutput</title>
+    <style>
+    *{
+      margin:0px;
+      padding:0px;
+      box-sizing:border-box;
+    } 
+    #body{
+          height:100%;
+          width:100%;
+          text-align:center;
+          background: linear-gradient(#8e9eab, #bbd2c5);
+          background-size:100% 100%;
+          background-repeat:no-repeat;
+          color:white;
+          font-size:17px;
+          background-attachment:fixed;
+          color:black;
+          }
+      .top{
+      height:40px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      margin:10px 12px;
+      border-top:0.5px solid black;
+      border-bottom:0.5px solid black;
+      }
+      .topout{
+      position:sticky;
+      top:0px;
+      border:0.1px solid transparent;
+      background: linear-gradient(#8e9eab, #bbd2c5);
+      background-size:100% 100%;
+      background-repeat:no-repeat;
+      background-attachment:fixed;
+      z-index:10;
+      width:100%;
+      outline:none;
+      box-shadow:2px 2px 10px black;
+      transition:0.1s;
+      }
+      .topout:active
+      {
+      opacity:0.7;
+      box-shadow:none;
+      }
+      .slogan{
+      color:black;
+      font-size:10px;
+      border:0.5px solid black;
+      height:30px;
+      border-right:none;
+      border-left:none;
+      display:flex;
+      align-items:center;
+      }
+      .symbol{
+      height:30px;
+      width:30px;
+      border-top:0.5px solid black;
+      border-bottom:0.5px solid black;
+      }
+      .name{
+      font-size:25px;
+      height:30px;
+      border-top:0.5px solid black;
+      border-bottom:0.5px solid black;
+      color:black;
+      }
+      table{
+        margin:0px auto;
+        text-align:center;
+        }
+      .td{
+         margin:10px;
+         width:65px;
+         height:40px;
+         text-align:center;
+         font-size:20px;
+         color:black;
+         background:none;
+         border:0.5px solid black;
+         border-radius:7px;
+         outline:none;
+         }
+      .heading{
+        display:inline-block;
+        padding:5px 0px;
+        margin:15px 0px;
+        font-size:15px;
+        border-bottom:0.2px solid black;
+        color:black;
+      }
+    .btns{
+      height:50px;
+      margin:30px 12px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      }
+      .btn{
+      font-size:23px;
+      width:75%;
+      background:none;
+      border:0.2px solid black;
+      color:black;
+      border-radius:40px;
+      outline:none;
+      transition:0.1s;
+      box-shadow:2px 2px 15px black;
+      padding:5px 0px;
+      }
+      .btn:active{
+      opacity:0.6;
+      box-shadow:none;
+      }
+    </style>
+</head>
+<body id="body">
+ <button class="topout" id="topout" onclick="home()">
+ <nav class="top" id="top">
+ <img src="cal.jpg" class="symbol" id="symbol">
+ <tt class="name" id="name">EiCal</tt>
+ <p class="slogan" id="slogan"> The time for Mathematics </p>
+ </nav>
+ </button>
+ <h2 class="heading" id="heading"><tt>Your Matrix</tt></h2>
+  <script>
+    var v1=eval(sessionStorage.getItem("val1"));
+    var v2=eval(sessionStorage.getItem("val2"));
+    var v3=eval(sessionStorage.getItem("val3"));
+    var v4=eval(sessionStorage.getItem("val4"));
+    var v5=eval(sessionStorage.getItem("val5"));
+    var v6=eval(sessionStorage.getItem("val6"));
+    var v7=eval(sessionStorage.getItem("val7"));
+    var v8=eval(sessionStorage.getItem("val8"));
+    var v9=eval(sessionStorage.getItem("val9"));
+    EiCal(v1,v2,v3,v4,v5,v6,v7,v8,v9);
+    function EiCal(a,b,c,d,e,f,g,h,i)
+    {
+    document.write("<br><table><tr><td class='td'>",a,"</td><td class='td'>",b,"</td><td class='td'>",c,"</td></tr><tr><td class='td'>",d,"</td><td class='td'>",e,"</td><td class='td'>",f,"</td></tr><tr><td class='td'>",g,"</td><td class='td'>",h,"</td><td class='td'>",i,"</td></tr></table><br>");
+    if(a==0 && b==0 && c==0 && d==0 && e==0 && f==0 && g==0 && h==0 && i==0)
+    {
+     document.write("For your Matrix, Eigen Vector can be <br> any/every Vector &isin;  &#8477; <SUP>3<SUP>");
+    }
+    else
+    {
+    function sign(x)
+    {
+    if(x>0)
+    {
+    return("+");
+    }
+    else if(x<0)
+    {
+    return(x);
+    }
+    else
+    {
+    return("+0");
+    }
+    }
+    function signval(x)
+    {
+    if(x>0)
+    {
+    return(x);
+    }
+    else
+    {
+    return("");
+    }
+    }
+    var z,p,q,r,s,y,S1,S2,A,B,C,D,j,Y=0,Z=0,L,m,k=1,n=[],a1,e1,i1,r1,r2,r3,s1,s2,s3,t1,t2,t3;
+    S1=(a)+(e)+(i);
+    A=(((e)*(i))-((h)*(f)));
+    B=(((d)*(i))-((g)*(f)));
+    C=(((d)*(h))-((e)*(g)));
+    D=(A*a)-(B*b)+(C*c);
+    S2=((A)+(((a)*(i))-((g)*(c)))+(((a)*(e))-((d)*(b))));
+    document.write("S<SUB>",1,"</SUB>=",S1,"<br>","S<SUB>",2,"</SUB>=",S2,"<br>","Determinant=",D,"<br>");
+    document.write("Characteristic Equation:","<br>","&lambda;<SUP>3</SUP>",sign(S1*(-1)), signval(S1*(-1)),"&lambda;<SUP>2</SUP>",sign(S2), signval(S2), "&lambda;",sign(D*(-1)), signval(D*(-1)),"=0","<br><br>");
+    document.write("Eigen Values:<br>");
+    for(j=0;j<1000;j++)
+    {
+    while((((j)*(j)*(j))-((j)*(j)*(S1))+((j)*(S2))-(D))==0)
+    {
+    document.write("&lambda;<SUB>",k,"</SUB>=",j,"<br>");
+    n[k]=j;
+    Y=Y+j;
+    j=j+1;
+    k=k+1;
+    }
+    }
+    for(j=-1;j>(-1000);j--)
+    {
+    while((((j)*(j)*(j))-((j)*(j)*(S1))+((j)*(S2))-(D))==0)
+    {
+    document.write("&lambda;<SUB>",k,"</SUB>=",j,"<br>");
+    n[k]=j;
+    Z=Z+j;
+    j=j-1;
+    k=k+1;
+    }
+    }
+    L=S1-(Y+Z);
+    m=(L)/2;
+    if(k==3&&n[1]==0&&S1==(Y+Z))
+    {
+    document.write("&lambda;<SUB>",k,"</SUB>=",n[1],"<br>");
+    n[k]=n[1];
+    k=k+1;
+    }
+    else if(k==2&&S1==(Y+Z)&&S1==0&&(Y+Z)==0&&n[1]==0)
+    {
+    document.write("&lambda;<SUB>",k,"</SUB>=",n[1],"<br>");
+    n[k]=n[1];
+    k=k+1;
+    document.write("&lambda;<SUB>",k,"</SUB>=",n[1],"<br>");
+    n[k]=n[1];
+    k=k+1;
+    }
+    else if((Y+Z)!=S1)
+    {
+    if(k==2)
+    {
+    document.write("&lambda;<SUB>",k,"</SUB>=",m,"<br>");
+    n[k]=m;
+    k=k+1;
+    document.write("&lambda;<SUB>",k,"</SUB>=",m,"<br>");
+    n[k]=m;
+    k=k+1;
+    }
+    else
+    {
+    document.write("&lambda;<SUB>",k,"</SUB>=",L,"<br>");
+    n[k]=L;
+    k=k+1;
+    }
+    }
+    document.write("<br>");
+    for(k=1;k<4;k++)
+    {
+    a1=a-n[k];
+    e1=e-n[k];
+    i1=i-n[k];
+    r1=((b*f)-(c*e1));
+    s1=((a1*f)-(d*c));
+    t1=((a1*e1)-(b*d));
+    r2=((b*i1)-(h*c));
+    s2=((a1*i1)-(g*c));
+    t2=((a1*h)-(g*b));
+    r3=((e1*i1)-(h*f));
+    s3=((d*i1)-(g*f));
+    t3=((d*h)-(g*e1));
+    if(k==2&&n[1]==n[2])
+    {
+    continue;
+    }
+    else if(k==3&&(n[1]==n[3]||n[2]==n[3]))
+    {
+    continue;
+    }
+    else if(r1!=0||s1!=0||t1!=0)
+    {
+    for(z=500;z>0;z--)
+    {
+    p=r1%z,q=-s1%z,r=t1%z;
+    if(p==0&&q==0&&r==0)
+    {
+    document.write("Eigen Vector for &lambda;<SUB>",k,"</SUB>=",n[k]," is:<br>[",r1/z," ",(-s1/z)," ",t1/z,"]<br>");
+    break;
+    }
+    }
+    }
+    else if(r2!=0||s2!=0||t2!=0)
+    {
+    for(z=500;z>0;z--)
+    {
+    p=r2%z,q=-s2%z,r=t2%z;
+    if(p==0&&q==0&&r==0)
+    {
+    document.write("Eigen Vector for &lambda;<SUB>",k,"</SUB>=",n[k]," is:<br>[",r2/z," ",(-s2/z)," ",t2/z,"]<br>");
+    break;
+    }
+    }
+    }
+    else if(r3!=0||s3!=0||t3!=0)
+    {
+    for(z=500;z>0;z--)
+    {
+    p=r3%z,q=-s3%z,r=t3%z;
+    if(p==0&&q==0&&r==0)
+    {
+    document.write("Eigen Vector for &lambda;<SUB>",k,"</SUB>=",n[k]," is:<br>[",r3/z," ",(-s3/z)," ",t3/z,"]<br>");
+    break;
+    }
+    }
+    }
+    else if(a1==0 && b==0 && c==0 && d==0 && e1==0 && f==0 && g==0 && h==0 && i1==0)
+    {
+     document.write("Eigen Vectors for &lambda;<SUB>",k,"</SUB>=",n[k]," are:<br>[1 0 0]<br>[0 1 0]<br>[0 0 1]");
+    }
+    else if(a1==0&&d==0&&g==0&&b==0&&e1==0&&h==0)
+    {
+    document.write("Eigen Vectors for &lambda;<SUB>",k,"</SUB>=",n[k]," are:<br>[1 0 0]<br>[0 1 0]<br>");
+    }
+    else if(b==0&&e1==0&&h==0&&c==0&&f==0&&i1==0)
+    {
+    document.write("Eigen Vectors for &lambda;<SUB>",k,"</SUB>=",n[k]," are:<br>[0 1 0]<br>[0 0 1]<br>");
+    }
+    else if(a1==0&&d==0&&g==0&&c==0&&f==0&&i1==0)
+    {
+    document.write("Eigen Vectors for &lambda;<SUB>",k,"</SUB>=",n[k]," are:<br>[1 0 0]<br>[0 0 1]<br>");
+    }
+    else if(a1==0&&d==0&&g==0&&c!=0)
+    {
+    for(z=500;z>0;z--)
+    {
+    p=c%z,q=-b%z;
+    if(p==0&&q==0)
+    {
+    document.write("Eigen Vectors for &lambda;<SUB>",k,"</SUB>=",n[k]," are:<br>[0 ",c/z," ",(-b/z),"]<br>[1 0 0]<br>");
+    break;
+    }
+    }
+    }
+    else if(a1==0&&d==0&&g==0&&f!=0)
+    {
+    for(z=500;z>0;z--)
+    {
+    p=f%z,q=-e1%z;
+    if(p==0&&q==0)
+    {
+    document.write("Eigen Vectors for &lambda;<SUB>",k,"</SUB>=",n[k]," are:<br>[0 ",f/z," ",(-e1/z),"]<br>[1 0 0]<br>");
+    break;
+    }
+    }
+    }
+    else if(a1==0&&d==0&&g==0&&i1!=0)
+    {
+    for(z=500;z>0;z--)
+    {
+    p=i1%z,q=-h%z;
+    if(p==0&&q==0)
+    {
+    document.write("Eigen Vectors for &lambda;<SUB>",k,"</SUB>=",n[k]," are:<br>[0 ",i1/z," ",(-h/z),"]<br>[1 0 0]<br>");
+    break;
+    }
+    }
+    }
+    else if(c==0&&f==0&&i1==0&&a1!=0)
+    {
+    for(z=500;z>0;z--)
+    {
+    p=b%z,q=-a1%z;
+    if(p==0&&q==0)
+    {
+    document.write("Eigen Vectors for &lambda;<SUB>",k,"</SUB>=",n[k]," are:<br>[",b/z," ",(-a1/z)," 0]<br>[0 0 1]<br>");
+    break;
+    }
+    }
+    }
+    else if(c==0&&f==0&&i1==0&&d!=0)
+    {
+    for(z=500;z>0;z--)
+    {
+    p=e1%z,q=-d%z;
+    if(p==0&&q==0)
+    {
+    document.write("Eigen Vectors for &lambda;<SUB>",k,"</SUB>=",n[k]," are:<br>[",e1/z," ",(-d/z)," 0]<br>[0 0 1]<br>");
+    break;
+    }
+    }
+    }
+    else if(c==0&&f==0&&i1==0&&g!=0)
+    {
+    for(z=500;z>0;z--)
+    {
+    p=h%z,q=-g%z;
+    if(p==0&&q==0)
+    {
+    document.write("Eigen Vectors for &lambda;<SUB>",k,"</SUB>=",n[k]," are:<br>[",h/z," ",(-g/z)," 0]<br>[0 0 1]<br>");
+    break;
+    }
+    }
+    }
+    else if(b==0&&e1==0&&h==0&&a1!=0)
+    {
+    for(z=500;z>0;z--)
+    {
+    p=-c%z,q=a1%z;
+    if(p==0&&q==0)
+    {
+    document.write("Eigen Vectors for &lambda;<SUB>",k,"</SUB>=",n[k]," are:<br>[",(-c/z)," 0 ",a1/z,"]<br>[0 1 0]<br>");
+    break;
+    }
+    }
+    }
+    else if(b==0&&e1==0&&h==0&&d!=0)
+    {
+    for(z=500;z>0;z--)
+    {
+    p=-f%z,q=d%z;
+    if(p==0&&q==0)
+    {
+    document.write("Eigen Vectors for &lambda;<SUB>",k,"</SUB>=",n[k]," are:<br>[",(-f/z)," 0 ",d/z,"]<br>[0 1 0]<br>");
+    break;
+    }
+    }
+    }
+    else if(b==0&&e1==0&&h==0&&g!=0)
+    {
+    for(z=500;z>0;z--)
+    {
+    p=-i1%z,q=g%z;
+    if(p==0&&q==0)
+    {
+    document.write("Eigen Vectors for &lambda;<SUB>",k,"</SUB>=",n[k]," are:<br>[",(-i1/z)," 0 ",g/z,"]<br>[0 1 0]<br>");
+    break;
+    }
+    }
+    }
+    else if(a1!=0&&b!=0&&c!=0)
+    {
+    for(z=500;z>0;z--)
+    {
+    p=-b%z,q=a1%z;
+    if(p==0&&q==0)
+    {
+    document.write("Eigen Vectors for &lambda;<SUB>",k,"</SUB>=",n[k]," are:<br>[",(-b/z)," ",a1/z," 0]<br>");
+    break;
+    }
+    }
+    for(y=500;y>0;y--)
+    {
+    r=-c%y,s=a1%y;
+    if(r==0&&s==0)
+    {
+    document.write("[",(-c/y)," 0 ",a1/y,"]<br>");
+    break;
+    }
+    }
+    }
+    else if(d!=0&&e1!=0&&f!=0)
+    {
+    for(z=500;z>0;z--)
+    {
+    p=-e1%z,q=d%z;
+    if(p==0&&q==0)
+    {
+    document.write("Eigen Vectors for &lambda;<SUB>",k,"</SUB>=",n[k]," are:<br>[",(-e1/z)," ",d/z," 0]<br>");
+    break;
+    }
+    }
+    for(y=500;y>0;y--)
+    {
+    r=-f%y,s=d%y;
+    if(r==0&&s==0)
+    {
+    document.write("[",(-f/y)," 0 ",d/y,"]<BR>");
+    break;
+    }
+    }
+    }
+    else if(g!=0&&h!=0&&i1!=0)
+    {
+    for(z=500;z>0;z--)
+    {
+    p=-h%z,q=g%z;
+    if(p==0&&q==0)
+    {
+    document.write("Eigen Vectors for &lambda;<SUB>",k,"</SUB>=",n[k]," are:<br>[",(-h/z)," ",g/z," 0]<br>");
+    break;
+    }
+    }
+    for(y=500;y>0;y--)
+    {
+    r=-i1%y,s=g%y;
+    if(r==0&&s==0)
+    {
+    document.write("[",(-i1/y)," 0 ",g/y,"]<br>");
+    break;
+    }
+    }
+    }
+    else
+    {
+    document.write("Eigen Vectors Can Never Be 'ZERO'<br>");
+    }
+    }
+    }
+    }
+   function calagain()
+   { 
+    window.open("EInput.html","_top");
+   }
+   function home()
+   { 
+   window.open("index.html","_top");
+   }
+  </script>
+  <div class="btns">
+  <button class="btn btn1" onclick="calagain()">Calculate Again</button>
+  </div>
+  <script>
+   var modeValOut=sessionStorage.getItem("modeValOut1");
+   if(modeValOut=="2")
+   {
+   var body=document.getElementById('body');
+   body.style.background='linear-gradient(#0f2027, #172d35, #1f3b47)';
+   body.style.backgroundRepeat='no-repeat';
+   body.style.backgroundSize='100% 100%';
+   body.style.backgroundAttachment='fixed';
+   body.style.color='white';
+   var topout=document.getElementById('topout');
+   topout.style.background='linear-gradient(#0f2027, #172d35, #1f3b47)';
+   topout.style.backgroundRepeat='no-repeat';
+   topout.style.backgroundSize='100% 100%';
+   topout.style.backgroundAttachment='fixed';
+   var btn=document.getElementsByClassName('btn');
+   btn[0].style.color='white';
+   btn[0].style.border='0.2px solid white';
+   var top1=document.getElementById('top');
+   top1.style.borderTop='0.5px solid white';
+   top1.style.borderBottom='0.5px solid white';
+   var symbol=document.getElementById('symbol');
+   symbol.style.borderTop='0.5px solid white';
+   symbol.style.borderBottom='0.5px solid white';
+   var name1=document.getElementById('name');
+   name1.style.borderTop='0.5px solid white';
+   name1.style.borderBottom='0.5px solid white';
+   name1.style.color='white';
+   var slogan=document.getElementById('slogan');
+   slogan.style.borderTop='0.5px solid white';
+   slogan.style.borderBottom='0.5px solid white';
+   slogan.style.color='white';
+   var td=document.getElementsByClassName('td');
+   var td123=0;
+   for(td123=0;td123<9;td123++)
+   {
+    td[td123].style.color='white';
+    td[td123].style.border='0.5px solid white';
+   }
+   var heading=document.getElementById('heading');
+   heading.style.color='white';
+   heading.style.borderBottom='0.2px solid white';
+   sessionStorage.setItem("modeVal3","2");
+   }
+   else if(modeValOut=="1")
+   {
+   var body=document.getElementById('body');
+   body.style.background='linear-gradient(#8e9eab, #bbd2c5)';
+   body.style.backgroundRepeat='no-repeat';
+   body.style.backgroundSize='100% 100%';
+   body.style.backgroundAttachment='fixed';
+   body.style.color='black';
+   var topout=document.getElementById('topout');
+   topout.style.background='linear-gradient(#8e9eab, #bbd2c5)';
+   topout.style.backgroundRepeat='no-repeat';
+   topout.style.backgroundSize='100% 100%';
+   topout.style.backgroundAttachment='fixed';
+   var btn=document.getElementsByClassName('btn');
+   btn[0].style.color='black';
+   btn[0].style.border='0.2px solid black';
+   var top1=document.getElementById('top');
+   top1.style.borderTop='0.5px solid black';
+   top1.style.borderBottom='0.5px solid black';
+   var symbol=document.getElementById('symbol');
+   symbol.style.borderTop='0.5px solid black';
+   symbol.style.borderBottom='0.5px solid black';
+   var name1=document.getElementById('name');
+   name1.style.borderTop='0.5px solid black';
+   name1.style.borderBottom='0.5px solid black';
+   name1.style.color='black';
+   var slogan=document.getElementById('slogan');
+   slogan.style.borderTop='0.5px solid black';
+   slogan.style.borderBottom='0.5px solid black';
+   slogan.style.color='black';
+   var td=document.getElementsByClassName('td');
+   var td123=0;
+   for(td123=0;td123<9;td123++)
+   {
+   td[td123].style.color='black';
+   td[td123].style.border='0.5px solid black';
+   }
+   var heading=document.getElementById('heading');
+   heading.style.color='black';
+   heading.style.borderBottom='0.2px solid black';
+   sessionStorage.setItem("modeVal3","1");
+   }
+  </script>
+</body>
+</html>

@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>index</title>
+    <style>
+     *{
+        margin:0px;
+        padding:0px;
+        box-sizing:border-box;
+        }
+     #body{
+       height:100%;
+       width:100%;
+       background: linear-gradient(#8e9eab, #bbd2c5);
+       background-size:100% 100%;
+       background-repeat:no-repeat;
+       background-attachment:fixed;
+     }
+     .top{
+       height:40px;
+       display:flex;
+       justify-content:center;
+       align-items:center;
+       margin:10px 12px;
+       border-top:0.5px solid black;
+       border-bottom:0.5px solid black;
+     }
+     .topout{
+       position:sticky;
+       top:0px;
+       border:0.1px solid transparent;
+       background: linear-gradient(#8e9eab, #bbd2c5);
+       background-size:100% 100%;
+       background-repeat:no-repeat;
+       background-attachment:fixed;
+       z-index:10;
+       box-shadow:2px 2px 10px black;
+     }
+     .slogan{
+       color:black;
+       font-size:10px;
+       border:0.5px solid black;
+       height:30px;
+       border-right:none;
+       border-left:none;
+       display:flex;
+       align-items:center;
+     }
+     .symbol{
+       height:30px;
+       width:30px;
+       border-top:0.5px solid black;
+       border-bottom:0.5px solid black;
+     }
+     .name{
+       font-size:25px;
+       height:30px; 
+       border-top:0.5px solid black;
+       border-bottom:0.5px solid black;
+       color:black;
+     }
+     .content{
+       border:0px solid white;
+       /*border-right:none;
+       border-left:none;*/
+       border-radius:80px;
+       margin:30px 10px;
+       display:flex;
+       flex-direction:column;
+       justify-content:center;
+       align-items:center;
+     }
+     .contnameleft{
+     width:100%;
+     height:50%;
+     display:flex;
+     justify-content:center;
+     align-items:center;
+     }
+     .contnameright{
+       width:100%;
+       height:50%;
+       display:flex;
+       flex-direction:column;
+       justify-content:center;
+       align-items:center;
+     }
+     .clock
+     {
+     height:200px;
+     width:200px;
+     background:url("mclockN5.png");
+     background-size:100% 100%;
+     background-repeat:no-repeat;
+     display:flex;
+     justify-content:center;
+     align-items:center;
+     border:0.1px solid grey;
+     border-radius:50%;
+     box-shadow:1px 1px 20px inset white;
+     }
+     .extrac
+     {
+      height:200px;
+      width:200px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      z-index:0;
+      border:0px solid white;
+      border-radius:50%;
+      box-shadow:1px 1px 25px;
+     }
+     .hr
+     {
+     position:absolute;
+     height:55px;
+     width:5px;
+     border-radius:50% 50% 0px 0px;
+     background:none;
+     z-index:1;
+     border:1px solid black;
+     }
+     .mn
+     {
+     position:absolute;
+     height:75px;
+     width:3px;
+     border-radius:50% 50% 0px 0px;
+     background:none;
+     z-index:2;
+     border:1px solid black;
+     }
+     .sc
+     {
+     position:absolute;
+     height:95px;
+     width:1px;
+     border-radius:50% 50% 0px 0px;
+     background:black;
+     z-index:3;
+     border:0.2px solid black;
+     }
+     .hour
+     {
+     position:absolute;
+     height:110px;
+     width:5px;
+     z-index:1;
+     }
+     .min
+     {
+     position:absolute;
+     height:150px;
+     width:3px;
+     z-index:2;
+     }
+     .sec
+     {
+     position:absolute;
+     height:150px;
+     width:1px;
+     z-index:3;
+     }
+     .center
+     {
+     position:absolute;
+     height:9px;
+     width:9px;
+     border-radius:50%;
+     z-index:4;
+     background: silver;
+     border:1px solid black;
+     }
+     .contname1{
+       font-size:30px;
+       width:60%;
+       border:0.2px solid white;
+       border-bottom:none;
+       border-radius:5px 5px 0px 0px;
+       color:white;
+       display:flex;
+       justify-content:center;
+       align-items:center;
+       }
+     .contname2{
+       font-size:8px;
+       border:0.2px solid white;
+       border-radius:5px 5px 5px 5px;
+       padding:0.5px 2px 0px 2px;
+       color:white;
+       width:65%;
+       display:flex;
+       justify-content:center;
+       align-items:center;
+     } 
+     .intro{
+       background-size:cover;
+       margin:0px 10px;
+       padding:25px ;
+       text-align:center;
+       color:black;
+     }
+     .btns{
+       height:50px;
+       margin:30px 12px 50px 12px;
+     }
+     .btn{
+       font-size:23px;
+       width:45%;
+       background:none;
+       border:0.2px solid black;
+       color:black;
+       border-radius:40px;
+       outline:none;
+       transition:0.1s;
+       box-shadow:1px 1px 10px black;
+     }
+     .btn1{
+       float:left;
+       padding:5px 0px;
+     }
+     .btn2{
+       float:right;
+       padding:5px 0px;
+     }
+     .btn:active{
+       box-shadow:none;
+       opacity:0.6;
+     }
+     .mode
+     {
+      height:30px;
+      display:flex;
+      flex-direction:row-reverse;
+      align-items:center;
+      font-size:10px;
+      margin:15px;
+     }
+     .modeOut
+     {
+      height:25px;
+      width:47px;
+      border-radius:50px;
+      border:none;
+      border:1px solid black;
+      margin:0px 5px;
+      display:flex;
+      align-items:center;
+      background:none;
+     }
+     .modeIn
+     {
+      width:17px;
+      height:17px;
+      border:7px solid black;
+      border-radius:50%;
+      margin:0px 5px;
+      outline:none;
+      background:none;
+     }
+     .footer
+     {
+      text-align:center;
+     }
+     .contact
+     {
+      margin:10px;
+      background:none;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+     }
+     .sml
+     {
+      margin:20px 0px 5px 0px;
+      display:inline-block;
+      border-bottom:0.5px solid black;
+     }
+     .bottom
+     {
+      margin:10px;
+      display:inline-block;
+     }
+     .logoB
+     {
+      height:30px;
+      width:30px;
+      border:none;
+      background:none;
+      border-radius:25%;
+      outline:none;
+      box-shadow:3px 3px 9px;
+      margin:5px 10px;
+      transition:0.2s;
+     }
+     .logoB:active
+     {
+      box-shadow:none;
+      opacity:0.6;
+     }
+     .logos
+     {
+     height:30px;
+     width:30px;
+     border-radius:25%;
+     }
+     .logoGB
+     {
+      height:30px;
+      width:45px;
+      background:none;
+      border:none;
+      box-shadow:3px 3px 9px;
+      border-radius:3px;
+      margin:5px 10px;
+      outline:none;
+      transition:0.2s;
+     }
+     .logoGB:active
+     {
+     box-shadow:none;
+     opacity:0.6;
+     }
+     .logoG
+     {
+      height:30px;
+      width:45px;
+      border-radius:3px;
+     }
+     .separateOut
+     {
+      margin:0px 0px;
+     }
+     .connect
+     {
+     margin:1px 5px;
+     }
+     .separate
+     {
+      margin:0px 10px;
+      display:flex;
+      flex-direction:row;
+      justify-content:center;
+      align-items:center;
+      color:black;
+     }
+     .separate1
+     {
+      width:32%;
+      border:0.3px solid black;
+     }
+     .sAB
+     {
+      width:50%;
+      border:0.3px solid black;
+      margin:0px auto;
+     }
+     .design
+     {
+      display:inline-block;
+      font-size:9px;
+      margin:10px 0px 10px 0px;
+     }
+   </style>
+</head>
+<body id="body">
+ <div class="topout" id="topout">
+  <nav class="top" id="top">
+   <img src="cal.jpg" class="symbol" id="symbol">
+   <tt class="name" id="name">EiCal</tt>
+   <p class="slogan" id="slogan"> The time for Mathematics </p>
+  </nav>
+ </div>
+ <div class="mode" id="mode">
+  <b>dark</b><div class="modeOut" id="modeOut"><button class="modeIn" id="modeIn" onclick="modeValEval(), mode();"></button></div><b>light</b>
+ </div>
+  <div class="content">
+    <div class="contnameleft">
+    <div class="extrac">
+    <div class="clock" id="clock">
+    <div class="hour" id="hour">
+    <div class="hr" id="hr">
+    </div>
+    </div>
+    <div class="min" id="min">
+    <div class="mn" id="mn">
+    </div>
+    </div>
+    <div class="sec" id="sec">
+    <div class="sc" id="sc">
+    </div>
+    </div>
+    <div class="center"> 
+    </div>
+    </div>
+    </div>
+    </div>
+    <!--<div class="contnameright">
+     <tt class="contname1">EiCal</tt>
+     <p class="contname2">The Time for Mathematics</p>
+    </div>-->
+  </div>
+  <div class="intro" id="intro">
+    <h2><tt>WELCOME</tt></h2><br>
+    <tt>This is the EiCal, this is the place where you will be able to calculate the <i>'Eigen values'</i> and the corresponding <i>'Eigen vectors'</i>.
+    You can also be able do some basic Mathematical calculations.<br><br>
+    <h3><tt>Let's go and have some fun with Mathematics!</tt></h3>
+  </div>
+  <div class="btns">
+   <button class="btn btn1" onclick="eigen()">Eigen</button>
+   <button class="btn btn2" onclick="calculator()">Calculator</button>
+  </div>
+  <div id="time">
+  </div>
+  <div class="separateOut">
+  <hr class="sAB" id="sAbove">
+  <div class="separate">
+  <hr class="separate1" id="separate11">
+  <tt class="connect" id="connect">STAY CONNECTED</tt>
+  <hr class="separate1" id="separate12">
+  </div>
+  <hr class="sAB" id="sBelow">
+  </div>
+  <footer class="footer">
+  <p class="sml" id="sml">Social Links</p>
+   <div class="contact" id="contact">
+    <button onclick="twitter();" class="logoB"><img src="Twitter.jpg" class="logos"></button>
+    <button onclick="instagram();" class="logoB"><img src="Instagram.jpg" class="logos"></button>
+    <button onclick="facebook();" class="logoB"><img src="Facebook.jpg" class="logos"></button>
+    <button onclick="gmail();" class="logoGB"><img src="Gmail.jpg" class="logoG"></button>
+   </div>
+   <p class="design" id="design">Developed by</p><p class="bottom" id="bottom"> Harsh Dod</p>
+   </footer>
+<script>
+  function twitter()
+  {
+   window.open("https://twitter.com/HarshDod1","_target");
+  }
+  function facebook()
+  {
+   window.open("https://facebook.com/harsh.dod.90","_target");
+  }
+  function instagram()
+  {
+   window.open("https://instagram.com/harshdod2/","_target");
+  }
+  function gmail()
+  {
+   window.open("mailto:harshpdod1@gmail.com");
+  }
+  function eigen()
+  {
+   window.open("EInput.html","_top");
+  }
+  function calculator()
+  {
+   window.open("Cal.html","_top");
+  }
+  var modeVal=sessionStorage.getItem("modeVal3");
+  if(modeVal==null)
+  {
+  modeVal="1";
+  }
+  function modeValEval()
+  {
+  if(modeVal=="1")
+  {
+  modeVal="2";
+  }
+  else if(modeVal=="2")
+  {
+  modeVal="1";
+  }
+  }
+  window.onload=mode();
+  function mode()
+  {
+  if(modeVal=="2")
+  {
+  var modeOut=document.getElementById('modeOut');
+  modeOut.style.flexDirection='row-reverse';
+  modeOut.style.border='1px solid white';
+  var modeIn=document.getElementById('modeIn');
+  modeIn.style.border='7px solid white';
+  modeIn.style.background='none';
+  var mode=document.getElementById('mode');
+  mode.style.color='white';
+  var body=document.getElementById('body');
+  body.style.background='linear-gradient(#0f2027, #172d35, #1f3b47)';
+  body.style.backgroundRepeat='no-repeat';
+  body.style.backgroundSize='100% 100%';
+  body.style.backgroundAttachment='fixed';
+  var topout=document.getElementById('topout');
+  topout.style.background='linear-gradient(#0f2027, #172d35, #1f3b47)';
+  topout.style.backgroundRepeat='no-repeat';
+  topout.style.backgroundSize='100% 100%';
+  topout.style.backgroundAttachment='fixed';
+  var clock=document.getElementById('clock');
+  clock.style.background='url("mclockN2.jpg")';
+  clock.style.backgroundRepeat='no-repeat';
+  clock.style.backgroundSize='100% 100%';
+  clock.style.boxShadow='1px 1px 20px inset silver';
+  var hr=document.getElementById('hr');
+  hr.style.border='1px solid white';
+  var mn=document.getElementById('mn');
+  mn.style.border='1px solid white';
+  var sc=document.getElementById('sc');
+  sc.style.border='0.2px solid white';
+  sc.style.background='white';
+  var intro=document.getElementById('intro');
+  intro.style.color='white';
+  var btn=document.getElementsByClassName('btn');
+  btn[0].style.color='white';
+  btn[1].style.color='white';
+  btn[0].style.border='0.2px solid white';
+  btn[1].style.border='0.2px solid white';
+  var top1=document.getElementById('top');
+  top1.style.borderTop='0.5px solid white';
+  top1.style.borderBottom='0.5px solid white';
+  var symbol=document.getElementById('symbol');
+  symbol.style.borderTop='0.5px solid white';
+  symbol.style.borderBottom='0.5px solid white';
+  var name1=document.getElementById('name');
+  name1.style.borderTop='0.5px solid white';
+  name1.style.borderBottom='0.5px solid white';
+  name1.style.color='white';
+  var slogan=document.getElementById('slogan');
+  slogan.style.borderTop='0.5px solid white';
+  slogan.style.borderBottom='0.5px solid white';
+  slogan.style.color='white';
+  var sAbove=document.getElementById('sAbove');
+  sAbove.style.border="0.3px solid white";
+  var sBelow=document.getElementById('sBelow');
+  sBelow.style.border="0.3px solid white";
+  var separate11=document.getElementById('separate11');
+  separate11.style.border="0.3px solid white";
+  var separate12=document.getElementById('separate12');
+  separate12.style.border="0.3px solid white";
+  var connect=document.getElementById('connect');
+  connect.style.color="white";
+  var sml=document.getElementById('sml');
+  sml.style.color="white";
+  sml.style.borderBottom="0.5px solid white";
+  var bottom=document.getElementById('bottom');
+  bottom.style.color="white";
+  var design=document.getElementById('design');
+  design.style.color="white";
+  sessionStorage.setItem("modeValCal1","2");
+  sessionStorage.setItem("modeValOut1","2");
+  sessionStorage.setItem("modeValIn1","2");
+  sessionStorage.setItem("modeValEr1","2");
+  sessionStorage.setItem("modeVal3","2");
+  }
+  else if(modeVal=="1")
+  {
+  var modeOut=document.getElementById('modeOut');
+  modeOut.style.flexDirection='row';
+  modeOut.style.border='1px solid black';
+  var modeIn=document.getElementById('modeIn');
+  modeIn.style.border='7px solid black';
+  modeIn.style.background='none';
+  var mode=document.getElementById('mode');
+  mode.style.color='black';
+  var body=document.getElementById('body');
+  body.style.background='linear-gradient(#8e9eab, #bbd2c5)';
+  document.body.style.backgroundRepeat='no-repeat';
+  document.body.style.backgroundSize='100% 100%';
+  document.body.style.backgroundAttachment='fixed';
+  var topout=document.getElementById('topout');
+  topout.style.background='linear-gradient(#8e9eab, #bbd2c5)';
+  topout.style.backgroundRepeat='no-repeat';
+  topout.style.backgroundSize='100% 100%';
+  topout.style.backgroundAttachment='fixed';
+  var clock=document.getElementById('clock');
+  clock.style.background='url("mclockN5.png")';
+  clock.style.backgroundRepeat='no-repeat';
+  clock.style.backgroundSize='100% 100%';
+  clock.style.boxShadow='1px 1px 20px inset grey';
+  var hr=document.getElementById('hr');
+  hr.style.border='1px solid black';
+  var mn=document.getElementById('mn');
+  mn.style.border='1px solid black';
+  var sc=document.getElementById('sc');
+  sc.style.border='0.2px solid black';
+  sc.style.background='black';
+  var intro=document.getElementById('intro');
+  intro.style.color='black';
+  var btn=document.getElementsByClassName('btn');
+  btn[0].style.color='black';
+  btn[1].style.color='black';
+  btn[0].style.border='0.2px solid black';
+  btn[1].style.border='0.2px solid black';
+  var top1=document.getElementById('top');
+  top1.style.borderTop='0.5px solid black';
+  top1.style.borderBottom='0.5px solid black';
+  var symbol=document.getElementById('symbol');
+  symbol.style.borderTop='0.5px solid black';
+  symbol.style.borderBottom='0.5px solid black';
+  var name1=document.getElementById('name');
+  name1.style.borderTop='0.5px solid black';
+  name1.style.borderBottom='0.5px solid black';
+  name1.style.color='black';
+  var slogan=document.getElementById('slogan');
+  slogan.style.borderTop='0.5px solid black';
+  slogan.style.borderBottom='0.5px solid black';
+  slogan.style.color='black';
+  var sAbove=document.getElementById('sAbove');
+  sAbove.style.border="0.3px solid black";
+  var sBelow=document.getElementById('sBelow');
+  sBelow.style.border="0.3px solid black";
+  var separate11=document.getElementById('separate11');
+  separate11.style.border="0.3px solid black";
+  var separate12=document.getElementById('separate12');
+  separate12.style.border="0.3px solid black";
+  var connect=document.getElementById('connect');
+  connect.style.color="black";
+  var sml=document.getElementById('sml');
+  sml.style.color="black";
+  sml.style.borderBottom="0.5px solid black";
+  var bottom=document.getElementById('bottom');
+  bottom.style.color="black";
+  var design=document.getElementById('design');
+  design.style.color="black";
+  sessionStorage.setItem("modeValCal1","1");
+  sessionStorage.setItem("modeValOut1","1");
+  sessionStorage.setItem("modeValIn1","1");
+  sessionStorage.setItem("modeValEr1","1");
+  sessionStorage.setItem("modeVal3","1");
+  }
+  }
+  var hr=document.getElementById('hour');
+  var mn=document.getElementById('min');
+  var sc=document.getElementById('sec');
+  setInterval(()=>{
+  var time=new Date();
+  var hr1=time.getHours();
+  var mn1=time.getMinutes();
+  var sc1=time.getSeconds()
+  if(hr1>12)
+  {
+  hr1=hr1-12;
+  }
+  hr.style.transform='rotate('+((hr1*30)+(mn1/2))+'deg)';
+  mn.style.transform='rotate('+((mn1*6)+(sc1/10))+'deg)';
+  sc.style.transform='rotate('+(sc1*6)+'deg)';
+  });
+</script>
+</body>
+</html>
