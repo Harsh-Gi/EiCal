@@ -19,6 +19,7 @@
        background-size:100% 100%;
        background-repeat:no-repeat;
        background-attachment:fixed;
+       text-align: center;
      }
      .top{
        height:40px;
@@ -366,6 +367,17 @@
       font-size:9px;
       margin:10px 0px 10px 0px;
      }
+     .noteM {
+      color: black;
+      padding: 5px 15px;
+      text-align: center;
+      border: 1px solid #eb6464;
+      margin: 0px 15px;
+      border-radius: 10px;
+      background: #eb6464;
+      opacity: 90%;
+      display: inline-block;
+    }
    </style>
 </head>
 <body id="body">
@@ -408,9 +420,10 @@
   <div class="intro" id="intro">
     <h2><tt>WELCOME</tt></h2><br>
     <tt>This is the EiCal, this is the place where you will be able to calculate the <i>'Eigen values'</i> and the corresponding <i>'Eigen vectors'</i>.
-    You can also be able do some basic Mathematical calculations.<br><br>
+    You can also be able do some basic Mathematical calculations.<br><br></tt>
     <h3><tt>Let's go and have some fun with Mathematics!</tt></h3>
   </div>
+  <span class="noteM">Note : This Web Application Design Appears To Be Better On The Mobile Devices.</span>
   <div class="btns">
    <button class="btn btn1" onclick="eigen()">Eigen</button>
    <button class="btn btn2" onclick="calculator()">Calculator</button>
